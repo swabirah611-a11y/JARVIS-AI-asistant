@@ -1,0 +1,6 @@
+{
+  "name": "JARVIS AI",
+  "description": "JARVIS AI - Premium personal assistant console. Upgraded to Stage 3 with real-time voice integration, voice activity detection (VAD), system noise floor adaptation, and voice synthesis.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

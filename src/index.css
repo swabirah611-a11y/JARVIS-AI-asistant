@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300..900;1,300..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Space+Grotesk:wght@300..700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Premium theme configurations */
+  --color-jarvis-slate-950: #05070a;
+  --color-jarvis-slate-900: #0a0f18;
+  --color-jarvis-slate-850: #101724;
+  --color-jarvis-slate-800: #141d2f;
+  --color-jarvis-slate-700: #1f2c45;
+  --color-jarvis-slate-600: #2e3e5c;
+  --color-jarvis-cyan: #00f0ff;
+  --color-jarvis-blue: #0070f3;
+  --color-jarvis-purple: #7928ca;
+  --color-jarvis-amber: #ffaa00;
+  --color-jarvis-red: #ff0055;
+
+  /* Custom animations */
+  --animate-spin-slow: spin 30s linear infinite;
+  --animate-spin-reverse-slow: spin-reverse 45s linear infinite;
+  --animate-pulse-subtle: pulse-subtle 4s ease-in-out infinite;
+  --animate-radar-sweep: radar-sweep 6s linear infinite;
+}
+
+@keyframes spin-reverse {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes pulse-subtle {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+}
+
+@keyframes radar-sweep {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Base Body Styles */
+body {
+  background-color: #05070a;
+  color: #f3f4f6;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+/* Custom glass effect utility */
+.glass-panel {
+  background: rgba(10, 15, 24, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass-panel-light {
+  background: rgba(16, 23, 36, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+/* Safe Markdown Styling Rules */
+.markdown-body {
+  font-family: var(--font-sans);
+  line-height: 1.6;
+}
+.markdown-body p {
+  margin-bottom: 0.75rem;
+}
+.markdown-body p:last-child {
+  margin-bottom: 0;
+}
+.markdown-body h1, .markdown-body h2, .markdown-body h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: #ffffff;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.01em;
+}
+.markdown-body h1 { font-size: 1.15rem; }
+.markdown-body h2 { font-size: 1.05rem; }
+.markdown-body h3 { font-size: 0.95rem; }
+.markdown-body ul, .markdown-body ol {
+  margin-top: 0.25rem;
+  margin-bottom: 0.75rem;
+  padding-left: 1.25rem;
+}
+.markdown-body ul { list-style-type: disc; }
+.markdown-body ol { list-style-type: decimal; }
+.markdown-body li {
+  margin-bottom: 0.25rem;
+}
+.markdown-body code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.15rem 0.35rem;
+  border-radius: 4px;
+  color: var(--color-jarvis-cyan);
+}
+.markdown-body pre {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+  padding: 0.85rem;
+  background: rgba(1, 2, 4, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  overflow-x: auto;
+}
+.markdown-body pre code {
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  color: #f3f4f6;
+  font-size: 0.85em;
+}
+.markdown-body strong {
+  font-weight: 600;
+  color: #ffffff;
+}
+.markdown-body em {
+  font-style: italic;
+  color: #9ca3af;
+}
+.markdown-body blockquote {
+  border-left: 2px solid var(--color-jarvis-cyan);
+  padding-left: 0.75rem;
+  margin-left: 0;
+  margin-right: 0;
+  color: #9ca3af;
+  font-style: italic;
+}
+
